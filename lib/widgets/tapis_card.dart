@@ -41,7 +41,7 @@ class TapisCard extends StatelessWidget {
               child: ListView(
                 children: [
                   PersonSection(
-                    title: 'Arbitres',
+                    title: 'Arbitres', // pour launch la pipeline
                     color: Colors.blue,
                     persons: refs,
                     tapisId: tapis.id!,
