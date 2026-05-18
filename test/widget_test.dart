@@ -1,30 +1,48 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:orukam/main.dart';
+import 'package:provider/provider.dart';
+import 'package:orukam/providers/competition_provider.dart';
+import 'package:orukam/screens/competition_screen.dart';
+import 'package:orukam/models.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    //await tester.pumpWidget(const MyApp());
+  setUpAll(() {
+    // Initialize sqflite for tests
+    sqfliteFfiInit();
+    databaseFactory = databaseFactoryFfi;
+  });
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  Widget createTestWidget() {
+    return ChangeNotifierProvider(
+      create: (context) => CompetitionProvider(),
+      child: const MaterialApp(
+        home: CompetitionScreen(),
+      ),
+    );
+  }
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  testWidgets('CompetitionScreen initial state test', (WidgetTester tester) async {
+    await tester.pumpWidget(createTestWidget());
+    await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Check if the default competition name is visible
+    // Note: Since it's dynamic from DB, we check for part of the UI
+    expect(find.text('Resp. Arbitre'), findsOneWidget);
+    expect(find.text('Resp. Commissaire'), findsOneWidget);
+    expect(find.text('Aucun tapis ajouté'), findsOneWidget);
+  });
+
+  testWidgets('Add Tapis dialog appears', (WidgetTester tester) async {
+    await tester.pumpWidget(createTestWidget());
+    await tester.pumpAndSettle();
+
+    // Find and tap the FloatingActionButton
+    await tester.tap(find.byType(FloatingActionButton));
+    await tester.pumpAndSettle();
+
+    // Verify dialog is shown
+    expect(find.text('Nouveau Tapis'), findsOneWidget);
+    expect(find.byType(TextField), findsOneWidget);
   });
 }
