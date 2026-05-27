@@ -44,10 +44,6 @@ class CompetitionScreen extends StatelessWidget {
             child: provider.tapisList.isEmpty
                 ? const Center(child: Text('Aucun tapis ajouté'))
                 : LayoutBuilder(builder: (context, constraints) {
-                    int crossAxisCount = 1;
-                    if (constraints.maxWidth > 600) crossAxisCount = 2;
-                    if (constraints.maxWidth > 1000) crossAxisCount = 3;
-
                     return GridView.builder(
                       padding: const EdgeInsets.all(8),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

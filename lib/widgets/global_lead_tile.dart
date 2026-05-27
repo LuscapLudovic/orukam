@@ -34,10 +34,10 @@ class GlobalLeadTile extends StatelessWidget {
         return Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: candidateData.isNotEmpty ? color.withOpacity(0.5) : color,
+            color: candidateData.isNotEmpty ? color.withValues(alpha: 0.5) : color,
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: candidateData.isNotEmpty ? textColor : textColor.withOpacity(0.5),
+              color: candidateData.isNotEmpty ? textColor : textColor.withValues(alpha: 0.5),
               width: candidateData.isNotEmpty ? 2 : 1,
             ),
           ),
@@ -54,7 +54,7 @@ class GlobalLeadTile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4),
                     child: Container(
                       padding: const EdgeInsets.all(8),
-                      color: color.withOpacity(0.8),
+                      color: color.withValues(alpha: 0.8),
                       child: Text(lead.name),
                     ),
                   ),

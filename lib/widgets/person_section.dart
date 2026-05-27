@@ -36,11 +36,11 @@ class PersonSection extends StatelessWidget {
           padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
             border: Border.all(
-              color: candidateData.isNotEmpty ? color.withOpacity(0.5) : color,
+              color: candidateData.isNotEmpty ? color.withValues(alpha: 0.5) : color,
               width: candidateData.isNotEmpty ? 3 : 1,
             ),
             borderRadius: BorderRadius.circular(8),
-            color: candidateData.isNotEmpty ? color.withOpacity(0.05) : null,
+            color: candidateData.isNotEmpty ? color.withValues(alpha: 0.05) : null,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,11 +70,11 @@ class PersonSection extends StatelessWidget {
                     margin: const EdgeInsets.only(bottom: 4),
                     decoration: BoxDecoration(
                       color: leadCandidate.isNotEmpty
-                          ? color.withOpacity(0.4)
-                          : color.withOpacity(0.2),
+                          ? color.withValues(alpha: 0.4)
+                          : color.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(4),
                       border: Border.all(
-                        color: leadCandidate.isNotEmpty ? color : color.withOpacity(0.5),
+                        color: leadCandidate.isNotEmpty ? color : color.withValues(alpha: 0.5),
                         width: leadCandidate.isNotEmpty ? 2 : 1,
                       ),
                     ),
@@ -86,7 +86,7 @@ class PersonSection extends StatelessWidget {
                               borderRadius: BorderRadius.circular(4),
                               child: Container(
                                 padding: const EdgeInsets.all(8),
-                                color: color.withOpacity(0.8),
+                                color: color.withValues(alpha: 0.8),
                                 child: Text(lead.name,
                                     style: const TextStyle(color: Colors.white)),
                               ),
@@ -133,7 +133,7 @@ class PersonSection extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                       child: Container(
                         padding: const EdgeInsets.all(8),
-                        color: color.withOpacity(0.8),
+                        color: color.withValues(alpha: 0.8),
                         child: Text(p.name, style: const TextStyle(color: Colors.white)),
                       ),
                     ),
