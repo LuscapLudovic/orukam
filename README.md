@@ -6,13 +6,13 @@
 
 ## 📋 À quoi sert cette application ?
 
-Quand vous organisez une compétition de sport de combat, vous devez répartir des **arbitres** et des **commissaires** sur chaque **tapis** (aire de combat). Orukam vous aide à :
+Quand vous organisez une compétition de judo, vous pouvez répartir des **arbitres** et des **commissaires** sur chaque **tapis**. Orukam vous aide à :
 
 - 🏷️ **Nommer votre compétition** (ex : « Tournoi de Paris 2026 »)
 - ➕ **Créer des tapis** (Tapis 1, Tapis 2, etc.)
 - 👤 **Ajouter des arbitres et des commissaires** sur chaque tapis
-- 👑 **Désigner des responsables** (un responsable arbitre et un responsable commissaire au niveau global, et un par tapis)
-- 🔄 **Déplacer les personnes d'un tapis à l'autre** par simple glisser-déposer (drag & drop)
+- 👑 **Désigner des responsables** (un responsable arbitre et un responsable commissaire pour la compétition, et un par tapis)
+- 🔄 **Déplacer les personnes d'un tapis à l'autre** par simple glisser-déposer
 - 🗑️ **Supprimer** des personnes, des tapis, ou remettre à zéro toute la compétition
 
 Toutes les données sont **sauvegardées automatiquement** sur votre appareil. Vous n'avez pas besoin de connexion Internet.
