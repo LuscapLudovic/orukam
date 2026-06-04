@@ -1,6 +1,6 @@
 # 🥋 Orukam
 
-**Orukam** est une application gratuite qui permet d'organiser la **répartition des arbitres et des commissaires sur les tapis** lors d'une compétition (judo, karaté, ou tout autre sport utilisant des tapis/aires de combat).
+**Orukam** est une application gratuite qui permet d'organiser la **répartition des arbitres et des commissaires sur les tapis** lors d'une compétition.
 
 ---
 
